@@ -4,8 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client;
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
-$app->make('Illuminate\Contracts\Http\Kernel')->handle(Request::capture());
+// initialize the app
+$app = require_once __DIR__.'/../bootstrap/app.php'; // this is the path to your bootstrap/app.php file
+$app->make('Illuminate\Contracts\Http\Kernel')->handle(Request::capture()); // this is the line that actually initializes the app  
 
 function get_token() {
     $url = "https://cybqa.pesapal.com/pesapalv3/api/Auth/RequestToken";
